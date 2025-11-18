@@ -1,168 +1,62 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guardians of the Green — Protect Our Forests</title>
-  <meta name="description" content="A simple, beautiful one-file website that invites visitors to protect forests and the planet." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Website</title>
   <style>
-    :root{
-      --bg:#0b2a13; --card:#0f3b1f; --muted:#b9d7c6; --accent:#9fe29f; --glass: rgba(255,255,255,0.04);
-      --max-w:1100px;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #eef7f0;
+      color: #2c3e50;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:#e8f8f0;background:linear-gradient(180deg,#04210e 0%, #052613 40%, #08331f 100%);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      display:flex;align-items:center;justify-content:center;padding:40px;
+    header {
+      background: #2ecc71;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
     }
-    .container{width:100%;max-width:var(--max-w);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));border-radius:14px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,0.6);}
-    header{display:flex;align-items:center;gap:18px}
-    .logo{width:64px;height:64px;border-radius:12px;background:radial-gradient(circle at 30% 25%, #bff1b6 0%, #4fb86b 30%, #0b5b2c 70%);display:grid;place-items:center;box-shadow:inset 0 -6px 18px rgba(0,0,0,0.25)}
-    .logo svg{width:44px;height:44px}
-    h1{margin:0;font-size:20px;color:var(--accent)}
-    p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
-
-    main{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:22px}
-    @media (max-width:980px){main{grid-template-columns:1fr} .aside{order:2}}
-
-    .card{background:linear-gradient(180deg,var(--card), rgba(10,50,20,0.9));border-radius:12px;padding:20px;color:#ecfff5}
-    .hero{padding:28px;border-radius:12px;background:linear-gradient(120deg, rgba(159,226,159,0.06), rgba(10,40,18,0.2));}
-    .hero h2{margin:0;font-size:28px}
-    .hero p{color:var(--muted);line-height:1.5}
-
-    .stats{display:flex;gap:12px;margin-top:14px}
-    .stat{flex:1;background:var(--glass);padding:12px;border-radius:10px;text-align:center}
-    .stat strong{display:block;font-size:18px;color:var(--accent)}
-    .actions{display:flex;gap:10px;margin-top:14px}
-    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
-    .btn-primary{background:linear-gradient(90deg,#1fa65a,#3bd887);color:#04210e}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-
-    .aside{position:relative}
-    .card.small{padding:16px}
-    .list{margin:0;padding:0;list-style:none}
-    .list li{padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03);color:var(--muted)}
-
-    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
-    .tile{height:110px;border-radius:10px;overflow:hidden;position:relative;background-size:cover;background-position:center}
-    .tile:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.25))}
-
-    .content-section{margin-top:18px}
-    h3{margin:0 0 8px 0}
-    .cta{display:flex;gap:10px;align-items:center}
-
-    footer{margin-top:20px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
-
-    /* subtle leaf animation */
-    .leaf{position:absolute;right:22px;top:-30px;opacity:0.14;transform:rotate(-10deg)}
-    .leaf svg{width:220px;height:220px;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.4))}
-
-    /* accessible focus */
-    a:focus, button:focus{outline:3px solid rgba(159,226,159,0.18);outline-offset:3px}
-
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #27ae60;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background: #2ecc71;
+      color: white;
+    }
   </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <header>
-      <div class="logo" aria-hidden="true">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 6c6 0 14 6 14 14 0 8-8 18-14 28-6-10-14-20-14-28C18 12 26 6 32 6z" fill="#ffffff" opacity="0.92"/><path d="M20 48c4-4 6-6 12-6s8 2 12 6H20z" fill="#073a1c"/></svg>
-      </div>
-      <div>
-        <h1>Guardians of the Green</h1>
-        <p class="lead">A small site that celebrates forests and invites everyone to protect our green world.</p>
-      </div>
-      <div class="leaf" aria-hidden="true">
-        <svg viewBox="0 0 200 200"><g fill="#0f3b1f"><path d="M45 160c20-40 85-95 140-130-10 40-60 110-95 130-20 12-55 10-45 0z"/></g></svg>
-      </div>
-    </header>
+  <header>Welcome to My Simple GitHub Website</header>
 
-    <main>
-      <section class="card hero">
-        <h2>Protect Forests. Protect Life.</h2>
-        <p>Forests are the lungs of our planet — they store carbon, shelter biodiversity, and support communities. Join us in simple actions that help preserve the green heart of Earth.</p>
+  <div class="container">
+    <h2>Hello!</h2>
+    <p>Ini adalah website sederhana yang bisa langsung kamu upload ke GitHub Pages. Kamu bisa mengedit teks, warna, dan gaya sesuai kebutuhanmu.</p>
 
-        <div class="stats" aria-hidden="true">
-          <div class="stat"><strong>4.2M</strong><span style="font-size:12px;color:var(--muted)">ha reforested</span></div>
-          <div class="stat"><strong>1,200+</strong><span style="font-size:12px;color:var(--muted)">community projects</span></div>
-          <div class="stat"><strong>Global</strong><span style="font-size:12px;color:var(--muted)">networks</span></div>
-        </div>
+    <h2>Tujuan Website</h2>
+    <p>Contoh ini dibuat untuk memberikan tampilan minimalis dan mudah digunakan. Tinggal salin seluruh isinya ke file <b>index.html</b> di GitHub kamu.</p>
 
-        <div class="actions">
-          <button class="btn btn-primary" onclick="scrollToSection('actions')">Get Involved</button>
-          <a class="btn btn-ghost" href="#about">Learn More</a>
-        </div>
-
-        <div class="content-section" id="about">
-          <h3>Why forests matter</h3>
-          <p style="color:var(--muted);">Beyond timber, forests provide clean water, food, medicines, and climate regulation. Protecting them means protecting our future generations.</p>
-        </div>
-
-      </section>
-
-      <aside class="aside">
-        <div class="card small">
-          <h3>Quick Actions</h3>
-          <ul class="list">
-            <li>Plant native trees in community spaces</li>
-            <li>Support local forest guardians and seed banks</li>
-            <li>Reduce single-use paper and avoid illegal timber</li>
-            <li>Volunteer for a local tree-planting day</li>
-          </ul>
-          <div style="margin-top:12px" class="cta">
-            <button class="btn btn-primary" onclick="alert('Thanks for your interest!')">Join a Drive</button>
-            <a class="btn btn-ghost" href="mailto:contact@example.org">Contact Us</a>
-          </div>
-        </div>
-
-        <div class="card small" style="margin-top:12px">
-          <h3>Gallery</h3>
-          <div class="gallery">
-            <div class="tile" style="background-image:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%23093e22\'/><circle cx=\'80\' cy=\'220\' r=\'60\' fill=\'%239fe29f\'/><path d=\'M120 300 Q200 180 320 300\' stroke=\'%230b2a13\' stroke-width=\'30\' fill=\'none\'/></svg>')"></div>
-            <div class="tile" style="background-image:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%23064b2a\'/><g fill=\'%239fe29f\'><ellipse cx=\'120\' cy=\'180\' rx=\'60\' ry=\'30\'/><ellipse cx=\'260\' cy=\'130\' rx=\'80\' ry=\'40\'/></g></svg>')"></div>
-            <div class="tile" style="background-image:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%230a3f23\'/><path d=\'M50 320 Q150 170 320 320\' stroke=\'%239fe29f\' stroke-width=\'22\' fill=\'none\'/></svg>')"></div>
-            <div class="tile" style="background-image:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%2302351a\'/><circle cx=\'220\' cy=\'180\' r=\'80\' fill=\'%239fe29f\'/></svg>')"></div>
-          </div>
-        </div>
-
-      </aside>
-    </main>
-
-    <section class="card" style="margin-top:18px">
-      <h3 id="actions">How you can help</h3>
-      <p style="color:var(--muted)">Small actions add up. Plant a tree, learn about native species, donate to verified reforestation projects, and spread the word. Advocate for policies that protect forests and respect indigenous custodianship.</p>
-      <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
-        <button class="btn btn-primary" onclick="copyText()">Copy a pledge</button>
-        <button class="btn btn-ghost" onclick="shareSample()">Share on social</button>
-      </div>
-    </section>
-
-    <footer>
-      <div>© Guardians of the Green — Keep forests alive</div>
-      <div>Made with ❤️ for the planet</div>
-    </footer>
-
+    <h2>Mulai Edit</h2>
+    <p>Silakan ubah bagian ini untuk menambahkan informasi tentang dirimu, portofolio, atau apa pun yang ingin kamu tampilkan.</p>
   </div>
 
-  <script>
-    function scrollToSection(id){
-      const el = document.getElementById(id);
-      if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
-    }
-
-    function copyText(){
-      const pledge = "I pledge to protect and restore forests: plant native trees, reduce paper waste, and support forest communities.";
-      navigator.clipboard?.writeText(pledge).then(()=> alert('Pledge copied! You can paste it anywhere.'), ()=> alert('Unable to copy — please select and copy manually.'));
-    }
-
-    function shareSample(){
-      const text = encodeURIComponent('Join me in protecting forests and our planet. #GuardiansOfTheGreen');
-      const url = 'https://twitter.com/intent/tweet?text='+text;
-      window.open(url,'_blank','noopener');
-    }
-  </script>
+  <footer>
+    © 2025 My Simple GitHub Site
+  </footer>
 </body>
 </html>
